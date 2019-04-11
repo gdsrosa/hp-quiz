@@ -9,6 +9,17 @@ module.exports = ({ mode }) => ({
     filename: 'bundle.js',
     path: path.resolve('dist'),
   },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+        },
+      },
+    ],
+  },
   plugins: [
     new HtmlWebpackPlugin({ template: './src/index.html', filename: 'index.html' }),
     new webpack.ProgressPlugin(),
