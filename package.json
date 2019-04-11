@@ -1,0 +1,17 @@
+{
+  "name": "challenge-front-iclinic",
+  "version": "1.0.0",
+  "description": "Challenge for a FrontEnd developer job.",
+  "main": "index.js",
+  "repository": "https://github.com/gdsrosa/hp-quiz.git",
+  "author": "Gabriel Rosa <gabrieldsrosa@gmail.com> (https://github.com/gdsrosa)",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "prettier": "1.16.4"
+  }
+}
