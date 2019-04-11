@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "Challenge for a FrontEnd developer job.",
   "main": "index.js",
+  "scripts": {
+    "webpack": "webpack",
+    "build": "npm run webpack -- --env.mode production",
+    "dev": "webpack-dev-server -- --env.mode development --hot"
+  },
   "repository": "https://github.com/gdsrosa/hp-quiz.git",
   "author": "Gabriel Rosa <gabrieldsrosa@gmail.com> (https://github.com/gdsrosa)",
   "license": "MIT",
@@ -12,6 +17,10 @@
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
-    "prettier": "1.16.4"
+    "html-webpack-plugin": "^3.2.0",
+    "prettier": "1.16.4",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.3.1"
   }
 }
