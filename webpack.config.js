@@ -18,6 +18,14 @@ module.exports = ({ mode }) => ({
           loader: 'babel-loader',
         },
       },
+      {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+      {
+        test: /\.(png|svg|jpe?g|gif)$/,
+        use: ['file-loader'],
+      },
     ],
   },
   plugins: [

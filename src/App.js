@@ -1,8 +1,9 @@
 import React from 'react';
+import Quiz from './components/Quiz';
 
 const App = () => (
   <div>
-    <h1>Challenge iClinic!!</h1>
+    <Quiz />
   </div>
 );
 
