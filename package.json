@@ -7,7 +7,7 @@
     "webpack-dev-server": "webpack-dev-server",
     "webpack": "webpack",
     "build": "npm run webpack -- --env.mode production",
-    "dev": "npm run webpack-dev-server -- --env.mode development --hot"
+    "dev": "npm run webpack-dev-server -- --env.mode development --hot --open"
   },
   "repository": "https://github.com/gdsrosa/hp-quiz.git",
   "author": "Gabriel Rosa <gabrieldsrosa@gmail.com> (https://github.com/gdsrosa)",
