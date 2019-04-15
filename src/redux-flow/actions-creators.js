@@ -15,7 +15,6 @@ export const checkAnswer = (...answers) => ({
   type: CHECK_ANSWER,
   payload: {
     answers: validateAnswer(answers),
-    isVerified: true,
     isQuizFinished: true,
   },
 });
