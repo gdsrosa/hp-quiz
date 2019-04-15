@@ -1,12 +1,21 @@
-import { ADD_ANSWER, CHECK_ANSWER } from './actions';
-import { validateAnswer } from '../utils';
+import { CHECK_ANSWER, RESET_QUIZ } from './actions';
+import { validateAnswer, clearFormInput } from '../utils';
 
-export const addAnswer = (...answers) => ({
-  type: ADD_ANSWER,
-  payload: { answers, isQuizFinished: true },
-});
+export const resetQuiz = (formId) => {
+  clearFormInput(formId);
+  return {
+    type: RESET_QUIZ,
+    payload: {
+      isFormCleared: true,
+    },
+  };
+};
 
 export const checkAnswer = (...answers) => ({
   type: CHECK_ANSWER,
-  payload: { answers: validateAnswer(answers), isVerified: true },
+  payload: {
+    answers: validateAnswer(answers),
+    isVerified: true,
+    isQuizFinished: true,
+  },
 });
