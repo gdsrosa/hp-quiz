@@ -4,54 +4,48 @@ A quiz for tests your knowledge of Harry Potter series
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes, to do so clone this repo:
 
 ```
-Give examples
+git clone https://github.com/gdsrosa/hp-quiz.git
+cd hp-quiz
 ```
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+Assuming you have all the Node.js and NPM environment setup in your machine:
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
+Let's install the dependencies
 
 ```
-until finished
+npm install
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+## Running the application in development mode
+
+To start your local webpack-dev-server run:
+
+```
+npm run dev
+```
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+To execute the unit tests:
 
 ```
-Give an example
+npm run test
 ```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [React](https://reactjs.org) - The web framework used
-* [Redux](https://redux.js.org/) - State Container
-* [Sass](https://sass-lang.com/) - Stylesheets
-* [Webpack](https://webpack.js.org/) - Used to bundle the application
-* [Yarn](https://yarnpkg.com/en/) - Dependency Management
+- [ES6](http://es6-features.org/#Constants) - The programming language used for the Client
+- [React.js](https://reactjs.org/) - The UI library used for the Client
+- [NPM](http://npmjs.org) - Dependency Management
+- [Sass](https://sass-lang.com/guide) - CSS Preprocessor
+- [Webpack](https://webpack.js.org) - Module Bundler
+- [Babel](https://babeljs.io/) - JavaScript Transpiler
 
 ## Authors
 
-* **Gabriel Rosa** - *Initial work* - [gdsrosa](https://github.com/gdsrosa)
+- **Gabriel Rosa** - [gdsrosa](https://github.com/gdsrosa)
