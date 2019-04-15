@@ -10,9 +10,8 @@ export const validateAnswer = (answer) => {
     });
   });
 
-  console.log(isCorrect.length);
-
   return isCorrect;
 };
 
-// console.log(checkAnswer([7, 'Daniel', 'Ed', 'Trouxa', 'Gina Weasley']));
+// eslint-disable-next-line no-undef
+export const clearFormInput = formId => document.getElementById(formId).reset();
