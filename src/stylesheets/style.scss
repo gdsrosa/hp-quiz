@@ -12,6 +12,7 @@ $light-blue: #6eb4ff;
 $light-grey: #ced4da;
 $white: #fff;
 $light-cyan: #51929c;
+$cyan: #138496;
 $yellow: #ffc104;
 
 // Elements
@@ -26,8 +27,8 @@ $yellow: #ffc104;
   color: $yellow;
 }
 
-#play-again {
-  margin-right: 10px;
+.verify-answer {
+  margin-bottom: 10px;
 }
 
 body {
@@ -62,8 +63,8 @@ input:focus {
 
 button {
   color: $black;
-  background-color: $light-cyan;
-  border-color: $light-cyan;
+  background-color: $cyan;
+  border-color: $cyan;
   display: inline-block;
   font-weight: 400;
   text-align: center;
@@ -76,6 +77,6 @@ button {
 }
 
 button:hover {
-  background-color: $black;
-  color: $light-cyan;
+  background-color: $light-cyan;
+  color: $black;
 }

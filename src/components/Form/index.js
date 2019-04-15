@@ -2,26 +2,41 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { checkAnswer } from '../../redux-flow/actions-creators';
+import { checkAnswer, resetQuiz } from '../../redux-flow/actions-creators';
 import {
   getIsQuizFinished,
   getIsFormCleared,
   getNumberOfRightAnswers,
+  getAnswers,
 } from '../../redux-flow/selectors';
 import FormInputs from './FormInputs';
-import FormButtons from './FormButtons';
 
 const Form = ({
-  handleCheckAnswer, isQuizFinished, isFormCleared, numberOfCorrectAnswers,
+  handleCheckAnswer,
+  isQuizFinished,
+  isFormCleared,
+  numberOfCorrectAnswers,
+  restartQuiz,
+  answers,
 }) => (
   <div className="questions">
     <form onSubmit={handleCheckAnswer} id="quiz">
-      <FormInputs />
+      <FormInputs isQuizFinished={isQuizFinished} isFormCleared={isFormCleared} answers={answers} />
       <br />
-      <div>{!isQuizFinished || isFormCleared ? '' : `Você acertou ${numberOfCorrectAnswers}!`}</div>
+      <div>{!isQuizFinished ? '' : `Você acertou ${numberOfCorrectAnswers}!`}</div>
       <br />
-      <FormButtons />
+      <button className="verify-answer" type="submit">
+        Verificar respostas
+      </button>
     </form>
+
+    {!isQuizFinished ? (
+      ''
+    ) : (
+      <button className="play-again" type="button" onClick={restartQuiz}>
+        Jogar Novamente
+      </button>
+    )}
   </div>
 );
 
@@ -39,12 +54,14 @@ const mapDispatchToProps = dispatch => ({
       ),
     );
   },
+  restartQuiz: () => dispatch(resetQuiz('quiz')),
 });
 
 const mapStateToProps = state => ({
   isQuizFinished: getIsQuizFinished(state),
   isFormCleared: getIsFormCleared(state),
   numberOfCorrectAnswers: getNumberOfRightAnswers(state),
+  answers: getAnswers(state),
 });
 
 Form.propTypes = {
@@ -52,6 +69,8 @@ Form.propTypes = {
   isQuizFinished: PropTypes.bool.isRequired,
   isFormCleared: PropTypes.bool.isRequired,
   numberOfCorrectAnswers: PropTypes.number.isRequired,
+  restartQuiz: PropTypes.func.isRequired,
+  answers: PropTypes.array.isRequired,
 };
 
 export default connect(

@@ -1,8 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-
-import { getIsQuizFinished, getIsFormCleared, getAnswers } from '../../redux-flow/selectors';
 
 const FormInputs = ({ isQuizFinished, isFormCleared, answers }) => (
   <div>
@@ -63,19 +60,10 @@ const FormInputs = ({ isQuizFinished, isFormCleared, answers }) => (
   </div>
 );
 
-const mapStateToProps = state => ({
-  answers: getAnswers(state),
-  isFormCleared: getIsFormCleared(state),
-  isQuizFinished: getIsQuizFinished(state),
-});
-
 FormInputs.propTypes = {
   isQuizFinished: PropTypes.bool.isRequired,
   isFormCleared: PropTypes.bool.isRequired,
   answers: PropTypes.array.isRequired,
 };
 
-export default connect(
-  mapStateToProps,
-  null,
-)(FormInputs);
+export default FormInputs;
