@@ -1,6 +1,6 @@
 import { CHECK_ANSWER, RESET_QUIZ } from './actions';
 
-const initialState = {
+export const initialState = {
   answers: [],
   isQuizFinished: false,
   isFormCleared: false,

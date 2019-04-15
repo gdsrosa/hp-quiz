@@ -1,5 +1,6 @@
 module.exports = {
-  extends: 'airbnb',
+  extends: ['airbnb', 'plugin:jest/recommended'],
+  plugins: ['jest'],
   rules: {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'class-methods-use-this': [0, { exceptMethods: '' }],
