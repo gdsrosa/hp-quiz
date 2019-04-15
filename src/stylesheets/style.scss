@@ -12,8 +12,24 @@ $light-blue: #6eb4ff;
 $light-grey: #ced4da;
 $white: #fff;
 $light-cyan: #51929c;
+$yellow: #ffc104;
 
 // Elements
+.app {
+  width: $width;
+  margin: $margin;
+  margin-left: 2em;
+  float: left;
+}
+
+.correct-answer {
+  color: $yellow;
+}
+
+#play-again {
+  margin-right: 10px;
+}
+
 body {
   font-family: 'Menlo', sans-serif;
   background: url('../static/castle.jpg');
@@ -22,13 +38,6 @@ body {
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
-}
-
-.app {
-  width: $width;
-  margin: $margin;
-  margin-left: 2em;
-  float: left;
 }
 
 input {
