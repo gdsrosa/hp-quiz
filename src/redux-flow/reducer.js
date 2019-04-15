@@ -3,7 +3,6 @@ import { CHECK_ANSWER, RESET_QUIZ } from './actions';
 export const initialState = {
   answers: [],
   isQuizFinished: false,
-  isFormCleared: false,
 };
 
 const reducer = (state = initialState, action) => {
@@ -17,7 +16,7 @@ const reducer = (state = initialState, action) => {
     case RESET_QUIZ:
       return {
         ...state,
-        isFormCleared: action.payload.isFormCleared,
+        isQuizFinished: action.payload.isQuizFinished,
       };
     default:
       return state;

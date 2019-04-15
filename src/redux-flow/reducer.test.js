@@ -7,7 +7,6 @@ describe('Reducer suite test', () => {
     const before = deepFreeze({
       answers: [],
       isQuizFinished: false,
-      isFormCleared: false,
     });
 
     const action = deepFreeze({
@@ -21,7 +20,6 @@ describe('Reducer suite test', () => {
     const after = {
       answers: [7, 'Daniel Radcliffe', 'Edwiges', 'Trouxas', 'Gina Weasley'],
       isQuizFinished: true,
-      isFormCleared: false,
     };
 
     expect(reducer(before, action)).toEqual(after);
@@ -31,20 +29,18 @@ describe('Reducer suite test', () => {
     const before = deepFreeze({
       answers: [],
       isQuizFinished: false,
-      isFormCleared: false,
     });
 
     const action = deepFreeze({
       type: RESET_QUIZ,
       payload: {
-        isFormCleared: true,
+        isQuizFinished: false,
       },
     });
 
     const after = {
       answers: [],
       isQuizFinished: false,
-      isFormCleared: true,
     };
 
     expect(reducer(before, action)).toEqual(after);
@@ -54,7 +50,6 @@ describe('Reducer suite test', () => {
     const before = deepFreeze({
       answers: [7, 'Daniel Radcliffe', 'Edwiges', 'Trouxas', 'Gina Weasley'],
       isQuizFinished: false,
-      isFormCleared: false,
     });
     const action = deepFreeze({
       type: 'UNKNOWN',
@@ -62,7 +57,6 @@ describe('Reducer suite test', () => {
     const after = {
       answers: [7, 'Daniel Radcliffe', 'Edwiges', 'Trouxas', 'Gina Weasley'],
       isQuizFinished: false,
-      isFormCleared: false,
     };
     expect(reducer(before, action)).toEqual(after);
   });

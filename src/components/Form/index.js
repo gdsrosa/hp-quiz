@@ -3,25 +3,19 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { checkAnswer, resetQuiz } from '../../redux-flow/actions-creators';
-import {
-  getIsQuizFinished,
-  getIsFormCleared,
-  getNumberOfRightAnswers,
-  getAnswers,
-} from '../../redux-flow/selectors';
+import { getIsQuizFinished, getNumberOfRightAnswers, getAnswers } from '../../redux-flow/selectors';
 import FormInputs from './FormInputs';
 
 const Form = ({
   handleCheckAnswer,
   isQuizFinished,
-  isFormCleared,
   numberOfCorrectAnswers,
   restartQuiz,
   answers,
 }) => (
   <div className="questions">
     <form onSubmit={handleCheckAnswer} id="quiz">
-      <FormInputs isQuizFinished={isQuizFinished} isFormCleared={isFormCleared} answers={answers} />
+      <FormInputs isQuizFinished={isQuizFinished} answers={answers} />
       <br />
       <div>{!isQuizFinished ? '' : `Você acertou ${numberOfCorrectAnswers}!`}</div>
       <br />
@@ -59,7 +53,6 @@ const mapDispatchToProps = dispatch => ({
 
 const mapStateToProps = state => ({
   isQuizFinished: getIsQuizFinished(state),
-  isFormCleared: getIsFormCleared(state),
   numberOfCorrectAnswers: getNumberOfRightAnswers(state),
   answers: getAnswers(state),
 });
@@ -67,7 +60,6 @@ const mapStateToProps = state => ({
 Form.propTypes = {
   handleCheckAnswer: PropTypes.func.isRequired,
   isQuizFinished: PropTypes.bool.isRequired,
-  isFormCleared: PropTypes.bool.isRequired,
   numberOfCorrectAnswers: PropTypes.number.isRequired,
   restartQuiz: PropTypes.func.isRequired,
   answers: PropTypes.array.isRequired,

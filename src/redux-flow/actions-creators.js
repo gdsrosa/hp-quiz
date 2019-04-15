@@ -6,7 +6,7 @@ export const resetQuiz = (formId) => {
   return {
     type: RESET_QUIZ,
     payload: {
-      isFormCleared: true,
+      isQuizFinished: false,
     },
   };
 };
